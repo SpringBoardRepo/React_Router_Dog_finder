@@ -1,0 +1,19 @@
+.Doglist {
+  color: rebeccapurple;
+  margin-top: 2rem;
+}
+
+.Doglist img {
+  max-width: 25%;
+  border-radius: 50%;
+}
+.column {
+  padding: 5px;
+  width: 25%;
+  display: inline;
+}
+
+.column a {
+  text-align: center;
+  color: dodgerblue;
+}

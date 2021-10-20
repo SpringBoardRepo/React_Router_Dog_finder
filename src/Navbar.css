@@ -1,0 +1,9 @@
+.Navbar {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.Navbar a.active {
+  color: brown;
+  font-weight: bold;
+}

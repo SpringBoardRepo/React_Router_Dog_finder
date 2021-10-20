@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom"
 
 function Dogs({ name }) {
     return (
-        <div>Dog Finder {name}</div>
+        <div>
+            <ul>
+                <li>
+                    <Link to={`/${name}`}></Link>
+                </li>
+            </ul>
+
+        </div>
     )
 }
 
