@@ -5,7 +5,7 @@ import Colors from "./Colors";
 import SelectColor from "./SelectColor";
 import AddNewColor from "./AddNewColor";
 import { BrowserRouter } from "react-router-dom";
-import { useEffect } from "react";
+
 
 
 function Routes() {
@@ -14,15 +14,15 @@ function Routes() {
     const [colors, updateColors] = useState(defaultColors);
 
     function renderCurrColors(props) {
-
-        const color = props.match.params.color;
-        const hex = color;
-
+        console.log(`PROPS ${JSON.stringify(props.match.params)}`);
+        const { color } = props.match.params;
+        console.log(colors[color])
+        const hex = colors[color];
         return <SelectColor {...props} hex={hex} color={color} />
     }
 
     function handleColor(newcolorObj) {
-        updateColors(previousColors => ({ ...previousColors, newcolorObj }))
+        updateColors(previousColors => ([...previousColors, ...newcolorObj]))
     }
     return (
         <BrowserRouter>

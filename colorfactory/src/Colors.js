@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 function Colors({ colors }) {
 
-    console.log(colors);
     const colorLinks = colors.map(color => (
         <li key={color}>
             <Link to={`/colors/${color}`}>{color}</Link>
