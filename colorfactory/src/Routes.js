@@ -10,19 +10,22 @@ import { BrowserRouter } from "react-router-dom";
 
 function Routes() {
 
-    const defaultColors = ["red", "teal", "yellow", "green"]
+    const defaultColors = {
+        red: "#FF0000",
+        green: "#00FF00",
+        blue: "#0000FF"
+    }
     const [colors, updateColors] = useState(defaultColors);
 
     function renderCurrColors(props) {
-        console.log(`PROPS ${JSON.stringify(props.match.params)}`);
+
         const { color } = props.match.params;
-        console.log(colors[color])
         const hex = colors[color];
         return <SelectColor {...props} hex={hex} color={color} />
     }
 
     function handleColor(newcolorObj) {
-        updateColors(previousColors => ([...previousColors, ...newcolorObj]))
+        updateColors(previousColors => ({ ...previousColors, ...newcolorObj }))
     }
     return (
         <BrowserRouter>

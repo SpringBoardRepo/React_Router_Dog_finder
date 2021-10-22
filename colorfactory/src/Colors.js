@@ -2,8 +2,7 @@
 import { Link } from "react-router-dom"
 
 function Colors({ colors }) {
-
-    const colorLinks = colors.map(color => (
+    const colorLinks = Object.keys(colors).map(color => (
         <li key={color}>
             <Link to={`/colors/${color}`}>{color}</Link>
         </li>
